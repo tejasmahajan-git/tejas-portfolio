@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Tejas Mahajan — MBA candidate focused on analytics, customer intelligence, forecasting and business problem-solving.">
+<meta name="theme-color" content="#0b0e16">
+<meta property="og:title" content="Tejas Mahajan | Analytics & Business">
+<meta property="og:description" content="Turning data into better decisions — customer intelligence, forecasting, risk analytics and market research.">
+<meta property="og:type" content="website">
+<title>Tejas Mahajan | Analytics & Business</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0e16'/%3E%3Ctext x='32' y='43' font-size='34' font-weight='900' text-anchor='middle' fill='%2371ead6' font-family='sans-serif'%3ETM%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#0b0e16;--bg2:#10141f;--panel:rgba(24,30,44,.62);--panel-solid:#171d2b;--panel2:#212a3d;
+  --ink:#f3f5fb;--muted:#a9b4c8;--line:rgba(255,255,255,.09);--line2:rgba(255,255,255,.16);
+  --mint:#71ead6;--pink:#ff4e9b;--orange:#ff9d45;--violet:#8b7bff;
+  --glow:rgba(113,234,214,.14);--max:1120px;--r:18px;
+}
+:root[data-theme="light"]{
+  --bg:#f5f7fb;--bg2:#eaeef6;--panel:rgba(255,255,255,.75);--panel-solid:#ffffff;--panel2:#eef1f8;
+  --ink:#10131c;--muted:#4b566b;--line:rgba(16,19,28,.1);--line2:rgba(16,19,28,.2);
+  --mint:#0a8f7c;--pink:#d6246f;--orange:#d76a0a;--violet:#5a48e0;--glow:rgba(10,143,124,.12);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow-x:hidden;transition:background .4s,color .4s}
+a{color:var(--mint);text-decoration:none}
+a:hover{text-decoration:underline}
+::selection{background:var(--mint);color:#07120f}
+.wrap{width:min(var(--max),calc(100% - 40px));margin:auto;position:relative;z-index:2}
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.aurora{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.aurora i{position:absolute;border-radius:50%;filter:blur(110px);opacity:.28;animation:float 22s ease-in-out infinite}
+.aurora i:nth-child(1){width:520px;height:520px;background:var(--pink);top:-140px;left:-120px}
+.aurora i:nth-child(2){width:560px;height:560px;background:var(--violet);top:30%;right:-200px;animation-delay:-8s}
+.aurora i:nth-child(3){width:480px;height:480px;background:var(--mint);bottom:-180px;left:25%;animation-delay:-15s;opacity:.18}
+:root[data-theme="light"] .aurora i{opacity:.16}
+@keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(60px,-50px) scale(1.12)}}
+.cursor-glow{position:fixed;width:420px;height:420px;border-radius:50%;pointer-events:none;z-index:1;background:radial-gradient(circle,var(--glow),transparent 65%);transform:translate(-50%,-50%);left:-999px;top:-999px;transition:opacity .3s}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--pink),var(--orange),var(--mint));z-index:100}
+
+/* header */
+header{position:sticky;top:0;z-index:50;backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);background:color-mix(in srgb,var(--bg) 72%,transparent);border-bottom:1px solid var(--line)}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:14px 0}
+.brand{font-weight:900;letter-spacing:.1em;color:var(--ink);font-size:.95rem}
+.brand span{color:var(--mint)}
+.links{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.links a{color:var(--muted);font-size:.88rem;padding:6px 12px;border-radius:99px;transition:.2s}
+.links a:hover,.links a.active{color:var(--ink);background:var(--panel2);text-decoration:none}
+.icon-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--line2);background:transparent;color:var(--ink);cursor:pointer;font-size:1rem;display:grid;place-items:center;transition:.2s}
+.icon-btn:hover{background:var(--panel2);transform:rotate(18deg)}
+
+/* hero */
+.hero{padding:96px 0 40px;min-height:78vh;display:flex;flex-direction:column;justify-content:center}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--mint);font-size:.76rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase}
+.eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 0 var(--mint);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(113,234,214,.6)}100%{box-shadow:0 0 0 14px rgba(113,234,214,0)}}
+.hero h1{font-size:clamp(2.9rem,8vw,6.2rem);line-height:.96;letter-spacing:-.065em;margin:22px 0 18px;font-weight:900}
+.gradient{background:linear-gradient(100deg,var(--pink),var(--orange),var(--pink));background-size:220% 100%;background-clip:text;-webkit-background-clip:text;color:transparent;animation:shift 7s linear infinite}
+@keyframes shift{to{background-position:220% 0}}
+.roles{font-size:clamp(1.05rem,2.4vw,1.4rem);font-weight:650;color:var(--ink);min-height:1.8em;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.roles .pre{color:var(--muted);font-weight:500}
+#typed{color:var(--mint)}
+.caret{display:inline-block;width:2px;height:1.2em;background:var(--mint);animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.lead{max-width:690px;color:var(--muted);font-size:1.1rem;margin:16px 0 0}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{padding:11px 18px;border:1px solid var(--line2);border-radius:11px;color:var(--ink);font-weight:750;font-size:.93rem;transition:.25s;display:inline-flex;gap:8px;align-items:center;background:var(--panel)}
+.btn:hover{transform:translateY(-3px);border-color:var(--mint);text-decoration:none;box-shadow:0 10px 30px -10px var(--mint)}
+.btn.primary{background:var(--mint);color:#07130f;border-color:var(--mint)}
+.micro{font-size:.82rem;color:var(--muted);margin-top:20px}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:54px}
+.stat{padding:20px;border:1px solid var(--line);border-radius:var(--r);background:var(--panel);backdrop-filter:blur(10px);position:relative;overflow:hidden}
+.stat b{display:block;font-size:2.1rem;letter-spacing:-.04em;line-height:1.1;background:linear-gradient(120deg,var(--mint),var(--violet));background-clip:text;-webkit-background-clip:text;color:transparent}
+.stat span{color:var(--muted);font-size:.82rem}
+
+/* sections */
+section{padding:56px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:20px;border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:26px;flex-wrap:wrap}
+.head h2{margin:0;font-size:clamp(1.6rem,3.4vw,2.3rem);letter-spacing:-.04em}
+.head h2 small{display:block;font-size:.72rem;color:var(--mint);letter-spacing:.2em;text-transform:uppercase;margin-bottom:6px;font-weight:800}
+.head p{margin:0;color:var(--muted);font-size:.92rem;max-width:380px}
+
+/* filters */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.chip-btn{padding:7px 14px;border-radius:99px;border:1px solid var(--line2);background:transparent;color:var(--muted);cursor:pointer;font:inherit;font-size:.84rem;transition:.2s}
+.chip-btn:hover{color:var(--ink);border-color:var(--mint)}
+.chip-btn.on{background:var(--mint);color:#07130f;border-color:var(--mint);font-weight:750}
+
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.card{position:relative;padding:26px;border:1px solid var(--line);border-radius:var(--r);background:var(--panel);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);overflow:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .3s,opacity .35s}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),var(--glow),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
+.card:hover{border-color:var(--line2)}
+.card:hover::before{opacity:1}
+.card.hide{display:none}
+.top{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}
+.num{font-size:.72rem;color:var(--mint);font-weight:850;letter-spacing:.14em}
+.tag{font-size:.72rem;border:1px solid var(--line2);border-radius:99px;padding:3px 10px;color:var(--muted)}
+.card h3{margin:14px 0 8px;font-size:1.28rem;line-height:1.25;letter-spacing:-.02em}
+.card p{color:var(--muted);font-size:.93rem;margin:0}
+.chips{display:flex;gap:7px;flex-wrap:wrap;margin:16px 0}
+.chips span{font-size:.74rem;background:var(--panel2);padding:4px 9px;border-radius:6px;color:var(--ink)}
+.finding{border-top:1px solid var(--line);padding-top:14px;margin-top:16px;font-size:.9rem;color:var(--muted)}
+.finding strong{color:var(--mint)}
+
+/* viz */
+.viz{margin:18px 0 4px;padding:16px;border-radius:12px;background:var(--panel2);border:1px solid var(--line)}
+.viz-title{font-size:.72rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+.bar-row{display:grid;grid-template-columns:110px 1fr 52px;gap:10px;align-items:center;font-size:.8rem;margin:8px 0;color:var(--muted)}
+.bar{height:10px;border-radius:99px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--mint),var(--violet));transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+.bar i.alt{background:linear-gradient(90deg,var(--pink),var(--orange))}
+.bar-row b{color:var(--ink);text-align:right}
+.donut-wrap{display:flex;align-items:center;gap:18px}
+.donut{width:96px;height:96px;flex:none;transform:rotate(-90deg)}
+.donut circle{fill:none;stroke-width:11}
+.donut .bgc{stroke:var(--line)}
+.donut .fg{stroke:url(#g);stroke-linecap:round;stroke-dasharray:0 100;transition:stroke-dasharray 1.6s cubic-bezier(.2,.8,.2,1)}
+.donut-wrap p{font-size:.84rem}
+.donut-wrap p b{color:var(--ink);font-size:1.5rem;display:block;line-height:1.1}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.kpi{text-align:center;padding:10px 4px;border-radius:10px;background:var(--bg2);border:1px solid var(--line)}
+.kpi b{display:block;font-size:1.2rem;color:var(--ink)}
+.kpi span{font-size:.7rem;color:var(--muted)}
+
+details{margin-top:14px;border:1px solid var(--line);border-radius:12px;background:transparent}
+summary{cursor:pointer;padding:10px 14px;font-size:.86rem;font-weight:700;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--mint);font-size:1.2rem;transition:transform .3s}
+details[open] summary::after{transform:rotate(45deg)}
+details .inner{padding:0 14px 14px;font-size:.9rem;color:var(--muted)}
+details .inner p+p{margin-top:8px}
+
+/* timeline */
+.two{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}
+.timeline{position:relative;padding-left:22px}
+.timeline::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--mint),var(--pink),transparent)}
+.item{position:relative;padding:4px 0 24px}
+.item:last-child{padding-bottom:0}
+.item::before{content:"";position:absolute;left:-22px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--mint)}
+.item h3{font-size:1.05rem;margin:0}
+.meta{color:var(--mint);font-size:.82rem;margin:3px 0 6px;font-weight:650}
+.item p{color:var(--muted);font-size:.92rem;margin:0}
+.edu .item::before{border-color:var(--orange)}
+.edu .timeline::before{background:linear-gradient(var(--orange),var(--pink),transparent)}
+.badge{display:inline-block;margin-top:8px;font-size:.74rem;padding:3px 10px;border-radius:99px;background:linear-gradient(100deg,var(--pink),var(--orange));color:#1a0b0f;font-weight:800}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.skill{padding:22px;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);backdrop-filter:blur(10px);position:relative;overflow:hidden}
+.skill::before{content:"";position:absolute;inset:0;background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),var(--glow),transparent 60%);opacity:0;transition:.3s;pointer-events:none}
+.skill:hover::before{opacity:1}
+.skill strong{font-size:1.02rem}
+.skill .chips{margin:12px 0 0}
+.skill .chips span{transition:.2s}
+.skill .chips span:hover{background:var(--mint);color:#07130f;transform:translateY(-2px)}
+
+/* approach */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.step{padding:16px 14px;border-radius:14px;border:1px solid var(--line);background:var(--panel);cursor:pointer;text-align:left;font:inherit;color:var(--ink);transition:.25s}
+.step b{display:block;color:var(--mint);font-size:.72rem;letter-spacing:.14em;margin-bottom:4px}
+.step span{font-weight:700;font-size:.95rem}
+.step:hover{transform:translateY(-3px)}
+.step.on{background:linear-gradient(135deg,var(--panel2),var(--panel));border-color:var(--mint);box-shadow:0 12px 36px -16px var(--mint)}
+.step-detail{margin-top:14px;padding:22px;border-radius:var(--r);border:1px solid var(--line);background:linear-gradient(120deg,var(--panel2),var(--panel));min-height:90px;color:var(--muted);transition:.3s}
+.step-detail strong{color:var(--ink)}
+
+/* contact */
+.contact{padding:44px;border-radius:24px;border:1px solid var(--line2);background:linear-gradient(130deg,rgba(255,78,155,.14),rgba(139,123,255,.14),rgba(113,234,214,.14));text-align:center}
+.contact h2{margin:0 0 8px;font-size:clamp(1.8rem,4vw,2.8rem);letter-spacing:-.04em}
+.contact p{color:var(--muted);margin:0 auto 22px;max-width:520px}
+.contact .actions{justify-content:center}
+
+footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);font-size:.85rem;position:relative;z-index:2}
+.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+#toTop{position:fixed;right:20px;bottom:20px;z-index:60;opacity:0;pointer-events:none;transition:.3s;background:var(--panel-solid)}
+#toTop.show{opacity:1;pointer-events:auto}
+
+/* reveal (only when JS runs) */
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+
+@media(max-width:860px){
+  .grid,.two,.skills{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:1fr 1fr}
+  .hero{padding:60px 0 24px;min-height:auto}
+  .links a{padding:5px 9px;font-size:.82rem}
+  .contact{padding:30px 20px}
+}
+@media(max-width:520px){.bar-row{grid-template-columns:84px 1fr 44px}.nav{flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .js .rv{opacity:1;transform:none}
+}
+@media print{
+  #bg,.aurora,.cursor-glow,#progress,#toTop,header,.filters,.icon-btn{display:none!important}
+  body{background:#fff;color:#000}
+  .card,.skill,.stat,.viz{background:#fff!important;border-color:#bbb!important;backdrop-filter:none}
+  .js .rv{opacity:1;transform:none}
+}
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<div id="progress"></div>
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="cursor-glow" id="cg" aria-hidden="true"></div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">TEJAS<span>.</span>MAHAJAN</a>
+    <nav class="links" aria-label="Primary">
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#approach">Approach</a>
+      <a href="#contact">Contact</a>
+      <button class="icon-btn" id="theme" aria-label="Toggle light and dark theme" title="Toggle theme">◐</button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div class="eyebrow">MBA · Marketing & Analytics</div>
+    <h1>Turning data into<br><span class="gradient">better decisions.</span></h1>
+    <div class="roles"><span class="pre">I work on</span> <span id="typed"></span><span class="caret"></span></div>
+    <p class="lead">I’m Tejas Mahajan, an MBA candidate interested in analytics, customer intelligence, forecasting, and solving business problems with evidence—not guesswork.</p>
+    <div class="actions">
+      <a class="btn primary" href="#projects">Explore selected work ↓</a>
+      <a class="btn" href="https://github.com/tejasmahajan-git" target="_blank" rel="noreferrer">GitHub ↗</a>
+      <a class="btn" href="https://linkedin.com/in/tejas-mahajan" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+      <a class="btn" href="mailto:tejasmahajan10173@gmail.com">Contact me ↗</a>
+    </div>
+    <p class="micro">India · Analytics · Business Analysis · Marketing Analytics · Consulting</p>
+    <div class="stats">
+      <div class="stat"><b data-count="5000" data-suffix="">0</b><span>Amazon reviews analyzed</span></div>
+      <div class="stat"><b data-count="65" data-suffix=" yrs">0</b><span>of Brent crude history modeled (1960–2024)</span></div>
+      <div class="stat"><b data-count="3000" data-suffix="">0</b><span>cyber incidents dashboarded</span></div>
+      <div class="stat"><b data-count="100" data-suffix="">0</b><span>consumer survey responses</span></div>
+    </div>
+  </div>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="head rv"><h2><small>Selected work</small>Projects</h2><p>Methods, findings, and why they matter — with honest limits.</p></div>
+      <div class="filters rv" role="tablist" aria-label="Filter projects">
+        <button class="chip-btn on" data-f="all">All</button>
+        <button class="chip-btn" data-f="nlp">NLP</button>
+        <button class="chip-btn" data-f="forecast">Forecasting</button>
+        <button class="chip-btn" data-f="bi">Dashboards & BI</button>
+        <button class="chip-btn" data-f="research">Market research</button>
+      </div>
+      <div class="grid" id="pgrid">
+
+        <article class="card rv" data-cat="nlp">
+          <div class="top"><span class="num">01 / CUSTOMER INTELLIGENCE</span><span class="tag">NLP · Analytics</span></div>
+          <h3>Amazon Customer Intelligence</h3>
+          <p>Built an end-to-end workflow for 5,000 Amazon Electronics reviews, including data-quality checks, product metadata integration, text cleaning, and exploratory analysis.</p>
+          <div class="viz">
+            <div class="viz-title">Theme mentions across reviews</div>
+            <div class="bar-row"><span>Audio & display</span><div class="bar"><i data-w="100"></i></div><b>1,048</b></div>
+            <div class="bar-row"><span>Battery & power</span><div class="bar"><i class="alt" data-w="93"></i></div><b>974</b></div>
+            <div class="kpis" style="margin-top:14px">
+              <div class="kpi"><b>4.27</b><span>avg rating / 5</span></div>
+              <div class="kpi"><b>81.7%</b><span>positive (rating proxy)</span></div>
+              <div class="kpi"><b>5,000</b><span>reviews</span></div>
+            </div>
+          </div>
+          <div class="chips"><span>Python</span><span>Pandas</span><span>DistilBERT</span><span>PyTorch</span><span>NLP</span></div>
+          <div class="finding"><strong>Finding:</strong> Average rating was 4.27/5; 81.7% of reviews were positive under a rating-based proxy. Battery & power appeared in 974 theme mentions, while audio & display appeared in 1,048.</div>
+          <details><summary>Business implication & caveat</summary><div class="inner"><p>Use recurring feedback themes to prioritize product issues for deeper investigation.</p><p><strong>Caveat:</strong> the rating proxy is not a validated NLP sentiment score.</p></div></details>
+        </article>
+
+        <article class="card rv" data-cat="forecast">
+          <div class="top"><span class="num">02 / FORECASTING</span><span class="tag">Time series</span></div>
+          <h3>Brent Crude Oil Price Forecasting</h3>
+          <p>Analyzed monthly Brent crude prices from 1960–2024, tested for non-stationarity, and compared ARIMA/SARIMA specifications using diagnostic checks and model-selection criteria.</p>
+          <div class="viz">
+            <div class="viz-title">Modeling pipeline</div>
+            <div class="kpis">
+              <div class="kpi"><b>ADF</b><span>stationarity test</span></div>
+              <div class="kpi"><b>(2,1,1)</b><span>SARIMA selected</span></div>
+              <div class="kpi"><b>≈5.14%</b><span>MAPE</span></div>
+            </div>
+          </div>
+          <div class="chips"><span>ADF test</span><span>ACF / PACF</span><span>ARIMA</span><span>SARIMA</span></div>
+          <div class="finding"><strong>Model result:</strong> Selected SARIMA (2,1,1), with approximately 5.14% MAPE.</div>
+          <details><summary>Business implication & caveat</summary><div class="inner"><p>Forecasting can inform scenario planning for commodity exposure and supply-chain assumptions.</p><p><strong>Caveat:</strong> compare performance against a documented baseline before claiming superiority.</p></div></details>
+        </article>
+
+        <article class="card rv" data-cat="bi">
+          <div class="top"><span class="num">03 / RISK ANALYTICS</span><span class="tag">Dashboard · BI</span></div>
+          <h3>Global Cybersecurity Threat Analysis</h3>
+          <p>Analyzed global cyberattack data from 2015–2024 and built an interactive dashboard comparing attack types, financial losses, affected users, countries, and industries.</p>
+          <div class="viz">
+            <div class="viz-title">Most frequent attack types (incidents)</div>
+            <div class="bar-row"><span>DDoS</span><div class="bar"><i data-w="100"></i></div><b>531</b></div>
+            <div class="bar-row"><span>Phishing</span><div class="bar"><i class="alt" data-w="99.6"></i></div><b>529</b></div>
+            <div class="donut-wrap" style="margin-top:16px">
+              <svg class="donut" viewBox="0 0 42 42" role="img" aria-label="26 percent nation-state share">
+                <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff4e9b"/><stop offset="1" stop-color="#ff9d45"/></linearGradient></defs>
+                <circle class="bgc" cx="21" cy="21" r="15.915"/>
+                <circle class="fg" cx="21" cy="21" r="15.915" data-d="26.5"/>
+              </svg>
+              <p><b>794 / 3,000</b>incidents from nation-state sources (≈26%)</p>
+            </div>
+          </div>
+          <div class="chips"><span>Data analysis</span><span>Visualization</span><span>Dashboarding</span><span>Risk analysis</span></div>
+          <div class="finding"><strong>Finding:</strong> DDoS (531 incidents) and phishing (529) were the most frequent attack types. Nation-state sources accounted for 794 of 3,000 incidents—about 26%.</div>
+          <details><summary>Business implication</summary><div class="inner"><p>Assess incident frequency alongside financial loss and user impact when prioritizing risk reviews.</p></div></details>
+        </article>
+
+        <article class="card rv" data-cat="research">
+          <div class="top"><span class="num">04 / MARKET RESEARCH</span><span class="tag">Consumer analytics</span></div>
+          <h3>Titan Watches — Consumer Market Research</h3>
+          <p>Designed a Google Forms survey and analyzed 100 consumer responses across 17 variables covering brand awareness, preference, purchase intent, gifting likelihood, and price sensitivity.</p>
+          <div class="viz">
+            <div class="viz-title">Respondents in the ₹2,000–₹5,000 price band</div>
+            <div class="donut-wrap">
+              <svg class="donut" viewBox="0 0 42 42" role="img" aria-label="44 percent in the 2000 to 5000 rupee band">
+                <circle class="bgc" cx="21" cy="21" r="15.915"/>
+                <circle class="fg" cx="21" cy="21" r="15.915" data-d="44"/>
+              </svg>
+              <p><b>44%</b>of 100 respondents · 17 variables · 75-page report</p>
+            </div>
+          </div>
+          <div class="chips"><span>Google Forms</span><span>Excel</span><span>Likert analysis</span><span>Segmentation</span></div>
+          <div class="finding"><strong>Finding:</strong> 44% of respondents fell within the ₹2,000–₹5,000 price band. Results were documented in a 75-page report.</div>
+          <details><summary>Business implication & caveat</summary><div class="inner"><p>Treat this price band as a positioning hypothesis to test further.</p><p><strong>Caveat:</strong> a 100-person sample is not proof of market-wide demand.</p></div></details>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <div class="head rv"><h2><small>Track record</small>Experience & education</h2><p>Applied work and academic record.</p></div>
+      <div class="two">
+        <div class="card rv">
+          <div class="timeline">
+            <div class="item">
+              <h3>Academic Committee, NMIMS Bengaluru</h3>
+              <div class="meta">Senior Member · Jun 2025 – Present</div>
+              <p>Managed an Excel database covering 400 students for mock group discussions and assessment activities; supported aptitude tests, Analytics interview dossiers, and the Corporate Mentorship Program.</p>
+            </div>
+            <div class="item">
+              <h3>Easyshala</h3>
+              <div class="meta">Branding Intern · Sep – Nov 2023</div>
+              <p>Created 30+ digital marketing assets and tracked performance with LinkedIn Analytics and Instagram Insights.</p>
+              <div class="viz" style="margin-top:12px">
+                <div class="viz-title">Within six weeks</div>
+                <div class="bar-row"><span>Followers: ~350</span><div class="bar"><i data-w="31"></i></div><b></b></div>
+                <div class="bar-row"><span>Followers: 1,140+</span><div class="bar"><i class="alt" data-w="100"></i></div><b></b></div>
+                <div class="bar-row"><span>Engagement: 1.8%</span><div class="bar"><i data-w="40"></i></div><b></b></div>
+                <div class="bar-row"><span>Engagement: 4.5%</span><div class="bar"><i class="alt" data-w="100"></i></div><b></b></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card edu rv">
+          <div class="timeline">
+            <div class="item">
+              <h3>MBA (Core)</h3>
+              <div class="meta">NMIMS Bengaluru · 2025 – Present</div>
+              <p>CGPA: 7.30/10</p>
+            </div>
+            <div class="item">
+              <h3>B.Voc. Sales & Marketing Management</h3>
+              <div class="meta">University of Mumbai · 2022 – 2025</div>
+              <p>CGPA: 9.32/10</p>
+              <span class="badge">🏅 Gold Medallist · Rank 1</span>
+            </div>
+            <div class="item">
+              <h3>School</h3>
+              <div class="meta">Class XII / Class X</div>
+              <p>CBSE: 76% · ICSE: 94.8%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="head rv"><h2><small>Toolkit</small>Skills</h2><p>The tools I use to move from question to answer.</p></div>
+      <div class="skills">
+        <div class="skill rv"><strong>Programming & analysis</strong><div class="chips"><span>Python</span><span>Pandas</span><span>NumPy</span><span>SQL</span><span>R</span><span>EDA</span><span>Data cleaning</span></div></div>
+        <div class="skill rv"><strong>Modeling & statistics</strong><div class="chips"><span>Regression</span><span>Classification</span><span>Clustering</span><span>Time-series forecasting</span><span>Hypothesis testing</span><span>ANOVA</span></div></div>
+        <div class="skill rv"><strong>Business intelligence</strong><div class="chips"><span>Excel</span><span>PivotTables</span><span>Power Query</span><span>Power BI</span><span>Tableau</span><span>Dashboards</span><span>Data visualization</span></div></div>
+        <div class="skill rv"><strong>Marketing & business</strong><div class="chips"><span>Market research</span><span>Consumer analytics</span><span>Customer segmentation</span><span>Google Analytics (GA4)</span><span>Insight communication</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="approach">
+    <div class="wrap">
+      <div class="head rv"><h2><small>How I think</small>My approach</h2><p>Click a step.</p></div>
+      <div class="steps rv" id="steps">
+        <button class="step on" data-i="0"><b>01</b><span>Ask</span></button>
+        <button class="step" data-i="1"><b>02</b><span>Check</span></button>
+        <button class="step" data-i="2"><b>03</b><span>Model</span></button>
+        <button class="step" data-i="3"><b>04</b><span>Explain</span></button>
+        <button class="step" data-i="4"><b>05</b><span>Act</span></button>
+      </div>
+      <div class="step-detail rv" id="sd" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact rv">
+        <h2>Let’s build something <span class="gradient">useful.</span></h2>
+        <p>Open to roles, project discussions, and collaboration in analytics and business problem-solving.</p>
+        <div class="actions">
+          <a class="btn primary" href="mailto:tejasmahajan10173@gmail.com">tejasmahajan10173@gmail.com</a>
+          <a class="btn" href="https://github.com/tejasmahajan-git" target="_blank" rel="noreferrer">GitHub ↗</a>
+          <a class="btn" href="https://linkedin.com/in/tejas-mahajan" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<button class="icon-btn" id="toTop" aria-label="Back to top">↑</button>
+<footer><div class="wrap foot"><span>© <span id="year"></span> Tejas Mahajan</span><span>Static site · Hosted free on GitHub Pages</span></div></footer>
+
+<script>
+(function(){
+  var root=document.documentElement, reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('year').textContent=new Date().getFullYear();
+
+  /* theme */
+  try{var t=localStorage.getItem('tm-theme');if(t)root.setAttribute('data-theme',t)}catch(e){}
+  document.getElementById('theme').addEventListener('click',function(){
+    var n=root.getAttribute('data-theme')==='light'?'dark':'light';
+    root.setAttribute('data-theme',n);
+    try{localStorage.setItem('tm-theme',n)}catch(e){}
+    colors();
+  });
+
+  /* constellation canvas */
+  var cv=document.getElementById('bg'),cx=cv.getContext('2d'),W,H,pts=[],mouse={x:-999,y:-999},rgb='113,234,214';
+  function colors(){rgb=root.getAttribute('data-theme')==='light'?'10,143,124':'113,234,214'}
+  colors();
+  function size(){W=cv.width=innerWidth;H=cv.height=innerHeight;var n=Math.min(90,Math.floor(W*H/17000));pts=[];for(var i=0;i<n;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35})}
+  function draw(){
+    cx.clearRect(0,0,W,H);
+    for(var i=0;i<pts.length;i++){
+      var p=pts[i];p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
+      cx.fillStyle='rgba('+rgb+',.55)';cx.beginPath();cx.arc(p.x,p.y,1.5,0,6.283);cx.fill();
+      for(var j=i+1;j<pts.length;j++){
+        var q=pts[j],dx=p.x-q.x,dy=p.y-q.y,d=dx*dx+dy*dy;
+        if(d<17000){cx.strokeStyle='rgba('+rgb+','+(.16*(1-d/17000))+')';cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(q.x,q.y);cx.stroke()}
+      }
+      var mx=p.x-mouse.x,my=p.y-mouse.y,md=mx*mx+my*my;
+      if(md<26000){cx.strokeStyle='rgba(255,78,155,'+(.4*(1-md/26000))+')';cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(mouse.x,mouse.y);cx.stroke();p.x+=mx*.002;p.y+=my*.002}
+    }
+    if(!reduce)requestAnimationFrame(draw);
+  }
+  size();addEventListener('resize',size);draw();
+
+  /* cursor glow + card spotlight */
+  var cg=document.getElementById('cg');
+  addEventListener('mousemove',function(e){
+    mouse.x=e.clientX;mouse.y=e.clientY;cg.style.left=e.clientX+'px';cg.style.top=e.clientY+'px';
+    var el=e.target.closest&&e.target.closest('.card,.skill');
+    if(el){var r=el.getBoundingClientRect();el.style.setProperty('--mx',(e.clientX-r.left)+'px');el.style.setProperty('--my',(e.clientY-r.top)+'px')}
+  });
+  if(matchMedia('(hover:none)').matches)cg.style.display='none';
+
+  /* progress, active nav, to-top */
+  var pr=document.getElementById('progress'),tt=document.getElementById('toTop');
+  var secs=['projects','experience','skills','approach','contact'].map(function(id){return document.getElementById(id)});
+  var nav=document.querySelectorAll('.links a[href^="#"]');
+  addEventListener('scroll',function(){
+    var h=document.documentElement,s=h.scrollTop;
+    pr.style.width=(s/(h.scrollHeight-h.clientHeight)*100)+'%';
+    tt.classList.toggle('show',s>700);
+    var cur='';secs.forEach(function(sc){if(sc.getBoundingClientRect().top<innerHeight*.35)cur=sc.id});
+    nav.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+cur)});
+  },{passive:true});
+  tt.addEventListener('click',function(){scrollTo({top:0,behavior:reduce?'auto':'smooth'})});
+
+  /* typed roles */
+  var roles=['customer intelligence','demand & price forecasting','dashboards that drive decisions','market research & segmentation','risk analytics'],ti=0,ci=0,del=false,el=document.getElementById('typed');
+  function type(){
+    var w=roles[ti];
+    if(reduce){el.textContent=w;return}
+    el.textContent=w.slice(0,ci);
+    if(!del&&ci<w.length){ci++;setTimeout(type,55)}
+    else if(!del){del=true;setTimeout(type,1500)}
+    else if(ci>0){ci--;setTimeout(type,28)}
+    else{del=false;ti=(ti+1)%roles.length;setTimeout(type,300)}
+  }
+  type();
+
+  /* reveal + counters + bars + donuts */
+  function countUp(n){
+    var end=+n.dataset.count,suf=n.dataset.suffix||'',t0=null;
+    if(reduce){n.textContent=end.toLocaleString('en-IN')+suf;return}
+    function f(t){if(!t0)t0=t;var p=Math.min((t-t0)/1600,1),e=1-Math.pow(1-p,4);n.textContent=Math.round(end*e).toLocaleString('en-IN')+suf;if(p<1)requestAnimationFrame(f)}
+    requestAnimationFrame(f);
+  }
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting)return;
+      var t=e.target;t.classList.add('in');
+      t.querySelectorAll('[data-w]').forEach(function(b){b.style.width=b.dataset.w+'%'});
+      t.querySelectorAll('[data-d]').forEach(function(c){c.style.strokeDasharray=c.dataset.d+' 100';c.setAttribute('pathLength','100')});
+      t.querySelectorAll('[data-count]').forEach(countUp);
+      if(t.dataset.count)countUp(t);
+      io.unobserve(t);
+    });
+  },{threshold:.15});
+  document.querySelectorAll('.rv,.stat').forEach(function(n){io.observe(n)});
+  document.querySelectorAll('.donut .fg').forEach(function(c){c.setAttribute('pathLength','100')});
+
+  /* project filters */
+  var chips=document.querySelectorAll('.chip-btn'),cards=document.querySelectorAll('#pgrid .card');
+  chips.forEach(function(b){b.addEventListener('click',function(){
+    chips.forEach(function(x){x.classList.remove('on')});b.classList.add('on');
+    cards.forEach(function(c){c.classList.toggle('hide',b.dataset.f!=='all'&&c.dataset.cat!==b.dataset.f)});
+  })});
+
+  /* approach steps */
+  var txt=[
+    '<strong>Start with the business question.</strong> What decision is on the table, who makes it, and what would change their mind? A sharp question prevents beautiful but useless analysis.',
+    '<strong>Check data quality and limitations.</strong> Missing values, biased samples, proxies, and definitions. I note what the data can and cannot support before modeling anything.',
+    '<strong>Choose an appropriate method.</strong> The simplest approach that fits the question — from exploratory analysis and segmentation to regression or SARIMA — validated with diagnostics and, where relevant, a baseline.',
+    '<strong>Explain what the evidence supports — and what it does not.</strong> Findings stay descriptive unless the design supports more. Caveats are part of the result, not an afterthought.',
+    '<strong>Turn the analysis into a practical next step.</strong> A prioritized issue list, a hypothesis to test, a scenario to plan for — something a team can actually do on Monday.'
+  ],sd=document.getElementById('sd'),st=document.querySelectorAll('.step');
+  function show(i){st.forEach(function(s,k){s.classList.toggle('on',k===i)});sd.innerHTML=txt[i]}
+  st.forEach(function(s){s.addEventListener('click',function(){show(+s.dataset.i)})});
+  show(0);
+})();
+</script>
+</body>
+</html>
